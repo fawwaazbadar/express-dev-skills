@@ -22,7 +22,7 @@ const find = (conditions, callback) => {
 
 const findById = (id, callback) =>{
   try {
-    const todo = skills.find(skill => skill._id === parseInt(id))
+    const skill = skills.find(skill => skill._id === parseInt(id))
     if (!skill) throw new Error ('No skill was found')
     return callback(null, skill)
   } catch (error) {
@@ -44,8 +44,8 @@ function findByIdAndDelete(id, callback) {
   try { 
     // Find the index based on the _id of the todo object
     const idx = skill.findIndex(skill => skill._id == parseInt(id))
-    const deletedTodo = skills.splice(idx, 1)
-    if (!deletedTodo.length ) throw new Error ('No skill was deleted')
+    const deletedSkill = skills.splice(idx, 1)
+    if (!deletedSkill.length ) throw new Error ('No skill was deleted')
     return callback(null, deletedSkill[0])
   } catch(error) {
     return callback(error, null)

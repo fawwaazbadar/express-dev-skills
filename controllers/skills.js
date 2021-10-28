@@ -1,6 +1,5 @@
 import * as skillDb from '../data/skill-db.js'
 
-
 function index(req, res) {
   skillDb.find({}, function(error, skills) {
     res.render('skills/index', {
@@ -12,9 +11,9 @@ function index(req, res) {
 }
 
 function show(req, res) {
-  skillsDb.findById(req.params.id, function(error, skills) {
+  skillDb.findById(req.params.id, function(error, skill) {
     res.render('skills/show', {
-      skills,
+      skill,
       error
     })
   })

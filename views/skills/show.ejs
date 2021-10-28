@@ -8,16 +8,13 @@
   <title>Express To-Dos</title>
 </head>
 <body>
-  <h1>All Skills</h1>
+	<h1>Skills</h1>
   <% if(error) { %>
     <h2><%= error %></h2>
+  <% } else { %>
+    <h2>Skill #<%= skill._id %></h2>
+    <h3><%= skill.text %></h3>
   <% } %>
-  <ul>
-    <% skills.forEach(function(skill) { %>
-      <li>
-        <a href="/skills/<%= skill._id %>"><%= skill.text %></a>
-      </li>
-    <% }) %>
-  </ul>
+	<a href="/skills">Go back</a>
 </body>
 </html>
